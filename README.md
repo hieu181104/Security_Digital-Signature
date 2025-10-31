@@ -36,8 +36,20 @@ Kết quả:
 - Độ dài khóa sử dụng: RSA 2048-bit
 - Chữ ký PKCS#7 được lưu trong trường /Contents của dictionary chữ ký (SigDict) trong file PDF.
 ### 3. Xác thực chữ ký trên PDF đã ký
-Tạo file `verify_pdf.py`
+#### Bước 1: Tạo file `verify_pdf.py`
+#### Bước 2: Tạo file pdf giả mạo: `tampered.pdf`
+Ở bài tập này em đã tạo một file `tamper_by_byte.py` để thay đổi byte trực tiếp trong vùng được ký (ByteRange): dễ làm, chắc chắn làm vỡ chữ ký vì thay đổi dữ liệu mà chữ ký đã băm.
 
-Tạo file pdf giả mạo: `tampered.pdf`
+Script này đọc signed.pdf, tìm mảng /ByteRange [ a b c d ] trong PDF, chọn 1 vị trí nằm trong đoạn đã kí (ví dụ offset a + 50) rồi lật 1 bit ở đó, lưu file mới tampered.pdf. Vì đã thay đổi nội dung nằm trong ByteRange, chữ ký sẽ không hợp lệ nữa.
 
-Chạy file `verify_pdf.py` và kiểm chứng kết quả xác thực:
+Chạy lệnh ```python tamper_by_byte.py``` để tạo ra file `tampered.pdf` giả mạo (đã thay đổi byte của chữ ký). 
+
+#### Bước 3: Chạy file `verify_pdf.py` và kiểm chứng kết quả xác thực:
+Kết quả sau khi chạy file `verify_pdf.py` để xác thực `tampered.pdf` được ghi log để tiện theo dõi:
+<img width="2628" height="535" alt="image" src="https://github.com/user-attachments/assets/ce0fe664-30f6-42ed-a5c7-30525392f856" />
+<img width="3064" height="1426" alt="image" src="https://github.com/user-attachments/assets/016d67b5-dea3-472b-a937-fd648c665bd2" />
+
+Kết luận cho thấy tuy nội dung file chưa bị chỉnh sửa nhưng chữ ký không hợp lệ nên kết luận "Chữ ký không hợp lệ hoặc file đã bị chỉnh sửa".
+<img width="1824" height="876" alt="image" src="https://github.com/user-attachments/assets/5387c7f3-ab7c-4b7f-9b1c-d77d4c2fd6d4" />
+
+## THE END
