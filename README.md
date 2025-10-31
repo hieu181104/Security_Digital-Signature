@@ -20,6 +20,14 @@ Bài làm sử dụng các công cụ:
 ```openssl req -x509 -new -nodes -key private_key.pem -sha256 -days 365 -out certificate.pem -subj "/CN=Nguyen Trung Hieu/O=UIT/C=VN"```
 ### 2. Tạo file và ký file PDF.
 Tạo file `sign_pdf.py`
-- Thêm chữ ký vào trang 5 (nơi có chữ ký tay)
-- Tạo vùng hiển thị chữ ký (widget)
-- Dùng PKCS#7 detached + SHA-256 + RSA 2048
+
+Trong terminal (VSCODE) chạy lệnh:
+```python sign_pdf.py```
+
+Kết quả:
+<img width="2588" height="46" alt="image" src="https://github.com/user-attachments/assets/108150b5-e091-48e7-8942-1fd20bab56cb" />
+
+#### File signed.pdf có chữ ký hợp lệ:
+<img width="3071" height="1431" alt="image" src="https://github.com/user-attachments/assets/47bf969a-1047-46e7-a3cc-053f5d42df31" />
+
+### 3. Xác thực chữ ký trên PDF đã ký
