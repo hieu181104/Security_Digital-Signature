@@ -11,6 +11,19 @@ Bài làm sử dụng các công cụ:
 - PyPDF2 / pikepdf – thao tác PDF và nhúng vùng chữ ký
 - hashlib, base64 – băm dữ liệu và mã hóa chữ ký
 - Python – viết script
-## II. CẤU TRÚC DỰ ÁN
+## III. CÁC BƯỚC TẠO VÀ LƯU CHỮ KÝ TRONG PDF
+### 1. Tạo khóa RSA và chứng chỉ
+Tạo file `generate_key_cert.sh`
 
-## III. 
+Thực hiện:
+```#!/bin/bash
+echo "Đang tạo khóa và chứng chỉ..."
+openssl genrsa -out private_key.pem 2048
+openssl req -x509 -new -nodes -key private_key.pem \
+    -subj "/CN=58KTPM Test CA/O=UIT/C=VN" \
+    -sha256 -days 365 -out certificate.pem
+echo "Hoàn tất! Đã tạo:"
+echo "   - private_key.pem"
+echo "   - certificate.pem"
+```
+### 2. Tạo file sign_pdf.py
