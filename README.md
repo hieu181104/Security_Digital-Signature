@@ -30,4 +30,9 @@ Kết quả:
 #### File signed.pdf có chữ ký hợp lệ:
 <img width="3071" height="1431" alt="image" src="https://github.com/user-attachments/assets/47bf969a-1047-46e7-a3cc-053f5d42df31" />
 
+#### Nêu rõ:
+- Trường md_algorithm="sha256" cho biết thuật toán băm (hash) sử dụng là: SHA-256 (Secure Hash Algorithm 256-bit). Đây là thuật toán băm chuẩn của họ SHA-2, tạo ra chuỗi 256 bit (32 byte).
+- SimpleSigner trong thư viện pyHanko mặc định sử dụng PKCS#1 v1.5 padding khi ký RSA. Đây là kiểu đệm chuẩn trong chữ ký số PDF/PAdES, tương thích với Adobe Acrobat.
+- Độ dài khóa sử dụng: RSA 2048-bit
+- Chữ ký PKCS#7 được lưu trong trường /Contents của dictionary chữ ký (SigDict) trong file PDF.
 ### 3. Xác thực chữ ký trên PDF đã ký
