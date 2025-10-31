@@ -36,3 +36,8 @@ Kết quả:
 - Độ dài khóa sử dụng: RSA 2048-bit
 - Chữ ký PKCS#7 được lưu trong trường /Contents của dictionary chữ ký (SigDict) trong file PDF.
 ### 3. Xác thực chữ ký trên PDF đã ký
+Tạo file `verify_pdf.py`
+
+Tạo file pdf giả mạo: `tampered.pdf`
+
+Chạy file `verify_pdf.py` và kiểm chứng kết quả xác thực:
