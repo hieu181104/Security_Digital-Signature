@@ -1,0 +1,53 @@
+=== XÁC THỰC CHỮ KÝ PDF ===
+🕒 Thời gian xác thực: 2025-10-31 20:38:45.730365
+📄 File kiểm tra: D:\Visual Studio Code - Folders\digital signature\tampered.pdf
+====================================
+🔍 Phát hiện chữ ký: SigField1
+====================================
+/Contents: 2388 bytes
+/ByteRange: [0, 1031008, 1035786, 722]
+SHA256(ByteRange): e260f3d27960cb59692a91f2debab4fde7199a73de5764e5009757e24a379fe2... ✅
+====================================
+🔒 KẾT QUẢ XÁC THỰC CHỮ KÝ:
+Signer info
+-----------
+Certificate subject: "Common Name: Nguyen Trung Hieu, Organization: UIT, Country: VN"
+Certificate SHA1 fingerprint: 88d76f555808be2ded96fbe2cc522e652854d814
+Certificate SHA256 fingerprint: f626b1c00ae775c04f6f13a7f6f56d5f73907fd8c0ba525ae6fdf06db40a095b
+Trust anchor: "Common Name: Nguyen Trung Hieu, Organization: UIT, Country: VN"
+The signer's certificate is untrusted.
+
+
+Integrity
+---------
+The signature is cryptographically unsound.
+
+The digest algorithm used was 'sha256'.
+The signature mechanism used was 'sha256_rsa'.
+
+
+Signing time
+------------
+Signing time as reported by signer: 2025-10-31T10:53:21+00:00
+
+
+Modifications
+-------------
+The signature covers the entire file.
+
+
+Bottom line
+-----------
+The signature is judged INVALID.
+
+
+
+📜 Thông tin người ký:
+  Chủ thể (Subject): Common Name: Nguyen Trung Hieu, Organization: UIT, Country: VN
+  SHA1: 88 D7 6F 55 58 08 BE 2D ED 96 FB E2 CC 52 2E 65 28 54 D8 14
+  SHA256: F6 26 B1 C0 0A E7 75 C0 4F 6F 13 A7 F6 F5 6D 5F 73 90 7F D8 C0 BA 52 5A E6 FD F0 6D B4 0A 09 5B
+
+🕒 Thời gian ký: 2025-10-31 17:53:21+07:00
+✅ File chưa bị chỉnh sửa.
+====================================
+❌ Chữ ký không hợp lệ hoặc file đã bị chỉnh sửa.
